@@ -23,14 +23,31 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // generates unique primary key values
     private Long id; // transaction id
 
+    @Getter
+    @Setter
     private LocalDate date;
+    @Getter
+    @Setter
     private double latitude;
+    @Getter
+    @Setter
     private double longitude;
 
+    @Getter
+    @Setter
     private int amount; // in cents
+    @Getter
+    @Setter
     private String category; // eg groceries, school, rent, gas, clothes
+    @Getter
+    @Setter
     private String merchant; // eg walmart, amazon, hooters
+    @Getter
+    @Setter
     private String tag; // for additional categorization (reimbursement, refund, income, etc)
+    @Getter
+    @Setter
     private String description;
 
 }
+
