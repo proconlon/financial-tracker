@@ -1,28 +1,13 @@
 package com.jamesconlon.financetracker.controller;
 
-import com.jamesconlon.financetracker.model.Entry;
-import com.jamesconlon.financetracker.repository.EntryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/test")
 public class TestController {
 
-    @Autowired
-    private EntryRepository entryRepository;
-
-    @GetMapping("/entries")
-    public List<Entry> getAllEntries() {
-        return entryRepository.findAll();
-    }
-
-    @PostMapping("/entries")
-    public Entry createEntry(@RequestBody Entry entry) {
-        entry.setDate(LocalDate.now());
-        return entryRepository.save(entry);
+    @GetMapping("/test")
+    public String testEndpoint() {
+        return "Test endpoint working!";
     }
 }

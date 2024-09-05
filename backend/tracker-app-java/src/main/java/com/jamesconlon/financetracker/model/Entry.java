@@ -1,63 +1,36 @@
 package com.jamesconlon.financetracker.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter; // allows you to get the value of a field without writing a getter/setter method
+import lombok.Setter;
+
 import java.time.LocalDate;
+
+/*
+    The Entry class represents a financial entry.
+*/
+
 
 @Entity
 public class Entry {
 
+    @Getter
+    @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // generates unique primary key values
+    private Long id; // transaction id
 
     private LocalDate date;
+    private double latitude;
+    private double longitude;
 
-    private String category;
-
+    private int amount; // in cents
+    private String category; // eg groceries, school, rent, gas, clothes
+    private String merchant; // eg walmart, amazon, hooters
+    private String tag; // for additional categorization (reimbursement, refund, income, etc)
     private String description;
 
-    // Constructors
-    public Entry() {}
-
-    public Entry(LocalDate date, String category, String description) {
-        this.date = date;
-        this.category = category;
-        this.description = description;
-    }
-
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
