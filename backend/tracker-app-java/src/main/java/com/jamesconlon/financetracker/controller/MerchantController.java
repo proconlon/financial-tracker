@@ -33,4 +33,10 @@ public class MerchantController {
     public void addCategoryToMerchant(@PathVariable String merchantName, @RequestBody String categoryName) {
         merchantService.addCategoryToMerchant(merchantName, categoryName);
     }
+
+    // remove a category from a merchant
+    @DeleteMapping("/{merchantName}/categories")
+    public void removeCategoryFromMerchant(@PathVariable String merchantName, @RequestBody String categoryName) {
+        merchantService.removeCategoryFromMerchant(merchantName, categoryName);
+    }
 }

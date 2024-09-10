@@ -39,5 +39,13 @@ public class MerchantService {
         }
     }
 
-    // Other business logic as needed
+    public void removeCategoryFromMerchant(String merchantName, String categoryName) {
+        Merchant merchant = merchantRepository.findByName(merchantName);
+        Category category = categoryRepository.findByName(categoryName);
+
+        if (merchant != null && category != null) {
+            merchant.removeCategory(category);
+            merchantRepository.save(merchant);
+        }
+    }
 }

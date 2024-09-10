@@ -14,6 +14,7 @@ Cloud: AWS
 # Everything I used
 - IntelliJ IDEA
 - JDK 22, maven 3.9.9
+- npm install @mui/joy @emotion/react @emotion/styled
 
 
 

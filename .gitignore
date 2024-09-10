@@ -1,4 +1,4 @@
-# Default Git ignore rules for IntelliJ IDEA, Java, Maven, and Node.js projects
+# Default Git ignore rules for IntelliJ IDEA, Java, Maven, Node.js, and React projects
 
 ### IntelliJ IDEA ###
 .idea/
@@ -94,7 +94,15 @@ bower_components/
 # TypeScript cache
 *.tsbuildinfo
 
-### macOS ###
+# Next.js
+.next/
+out/
+
+# Parcel-bundler cache (https://parceljs.org/)
+.cache/
+.parcel-cache/
+
+# Mac files ###
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -118,3 +126,12 @@ temp/
 *.sln.iml
 out/
 .vscode/
+
+# Storybook files
+storybook-static/
+
+# Testing coverage files
+coverage/
+
+# Cypress testing
+.cypress_cache/
